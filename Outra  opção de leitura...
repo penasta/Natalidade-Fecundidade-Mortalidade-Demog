@@ -1,0 +1,11 @@
+pacman::p_load(read.dbc, dplyr, stringr)
+
+setwd("C:/Users/Bruno/Desktop/TrabDem/SINASC")
+sinasc <- list.files(pattern = "*.dbc") %>% 
+  lapply(read.dbc) %>% 
+  bind_rows 
+
+setwd("C:/Users/Bruno/Desktop/TrabDem/SIM")
+sim <- list.files(pattern = "*.dbc") %>% 
+  lapply(read.dbc) %>% 
+  bind_rows 
